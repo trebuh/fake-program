@@ -1,0 +1,54 @@
+= Fake program
+Hubert Cabot <hubert.cabot@decathlon.com>
+
+== Installation
+
+=== Clone the project
+
+....
+$ git clone https://github.com/hcabot/fake-program
+$ cd fake-program
+....
+
+You can either build it manually and use it straight up or build and install it using Meson.
+
+=== Build manually
+
+....
+$ gcc -Wall -Wextra main.c -o fake-program
+....
+
+
+=== Build using Meson
+https://mesonbuild.com/[Meson] is used to build this project.
+
+Hence it also uses https://ninja-build.org/[Ninja]
+
+Make sure they are installed on your system and properly configured.
+
+[IMPORTANT]
+====
+The program here is called " fake-program "
+You can easily replace it by a name of your choosing:
+....
+$ sed -i 's/fake-program/YOUR_PROGRAM_NAME/g' *
+$ mv fake-program.service YOUR_PROGRAM_NAME.service
+....
+====
+
+IMPORTANT: The choice made here to start the program at startup
+is to use systemd.
+
+The build system will execute the following steps:
+
+. Setup the build
+. Compile
+. Install the executable in _/usr/local/bin/_
+. Install the _fake-program.service_ systemd service file into
+. Make the systemd _fake-program_ service start at boot
+....
+$ meson setup builddir
+$ cd builddir
+$ ninja
+# ninja install
+....
