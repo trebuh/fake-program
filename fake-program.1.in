@@ -1,5 +1,10 @@
-." Man page for fake-program.
+.\" Man page for fake-program.
+.\" Open an issue on Github to correct errors or typos
 .TH fake-program 1 "27 July 2019" "version @version@"
-.SH fake-program - A program that does nothing
+.SH SYNOPSYS
+.B fake-program
+.SH NAME
+fake-program - Does nothing
 .SH DESCRIPTION
 This program does not do anything.
+It does not have any option
