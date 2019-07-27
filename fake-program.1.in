@@ -1,0 +1,5 @@
+." Man page for fake-program.
+.TH fake-program 1 "27 July 2019" "version @version@"
+.SH fake-program - A program that does nothing
+.SH DESCRIPTION
+This program does not do anything.
