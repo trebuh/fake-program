@@ -10,4 +10,17 @@ configure_file(
     output : 'fake-program.1',
     configuration : conf_data
 )
-install_man(fake-program.1)
+
+install_man('fake-program.1')
+
+configure_file(
+    input : 'fake-program.service.in',
+    output : 'fake-program.service',
+    configuration : conf_data
+)
+
+install_data(
+    'fake-program.service',
+    install_dir : '/usr/lib/systemd/user/',
+    install_mode: ['rw-r--r--', 'root', 'root']
+)

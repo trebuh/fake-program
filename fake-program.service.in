@@ -1,0 +1,11 @@
+[Unit]
+Description=Program named "@name@" just running and doing nothing
+Documentation=man:@name@
+
+[Service]
+ExecStart=/usr/local/bin/@name@
+Restart=always
+
+[Install]
+WantedBy=default.target
+
