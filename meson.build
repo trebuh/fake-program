@@ -3,6 +3,7 @@ executable('fake-program', 'main.c', install : true)
 
 conf_data = configuration_data()
 conf_data.set('version', meson.project_version())
+conf_data.set('name', meson.project_name())
 
 configure_file(
     input : 'fake-program.1.in',
