@@ -19,7 +19,7 @@ The program here is called " fake-program "
 You can easily replace it by a name of your choosing by running
 the following commands in the main directory:
 ....
-$ sed -i 's/fake-program/YOUR_PROGRAM_NAME/g' *
+$ sed -i 's/fake-program/YOUR_PROGRAM_NAME/g' meson.build
 $ rename fake-program YOUR_PROGRAM_NAME *
 ....
 ====
@@ -46,9 +46,8 @@ The build system will execute the following steps:
 . Setup the build
 . Compile
 . Install the executable in _/usr/local/bin/_
-. Install the _fake-program.service_ systemd service file
-. Make the systemd _fake-program_ service start at boot
 . Install the manual page
+. Install the _fake-program.service_ systemd service file
 
 Pick one of the following steps.
 
