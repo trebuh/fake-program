@@ -17,6 +17,6 @@ configure_file(
     input : 'fake-program.service.in',
     output : 'fake-program.service',
     configuration : conf_data,
-    install_dir : '/etc/systemd/system/'
+    install_dir : '/etc/systemd/system/',
     install_mode: ['rw-r--r--', 'root', 'root']
 )
