@@ -1,0 +1,66 @@
+= Fake program
+Trebuh
+
+== Goal
+
+This program does nothing.
+
+The idea is just to have a program named _fake-program_ running on your system.
+
+It is also possible to have it run at system boot as a systemd service.
+
+A manual page is provided.
+
+In addition, this project was an opportunity to test Meson build system.
+
+[IMPORTANT]
+====
+The program here is called " fake-program "
+You can easily replace it by a name of your choosing by running
+the following commands in the main directory:
+....
+$ sed -i 's/fake-program/YOUR_PROGRAM_NAME/g' meson.build
+$ rename fake-program YOUR_PROGRAM_NAME *
+....
+====
+
+== Installation
+
+=== Clone the project
+
+....
+$ git clone https://github.com/hcabot/fake-program
+$ cd fake-program
+....
+
+
+You can now either:
+
+- build it manually and use it straightaway
+- build and install it using https://mesonbuild.com/[Meson]
+
+Meson is configured to use https://ninja-build.org/[Ninja].
+
+The build system will execute the following steps:
+
+. Setup the build
+. Compile
+. Install the executable in _/usr/local/bin/_
+. Install the manual page
+. Install the _fake-program.service_ systemd service file
+
+Pick one of the following steps.
+
+=== Build manually
+
+....
+$ gcc -Wall -Wextra main.c -o fake-program
+....
+
+=== Build using Meson
+....
+$ meson setup builddir
+$ cd builddir
+$ ninja
+$ sudo ninja install
+....
